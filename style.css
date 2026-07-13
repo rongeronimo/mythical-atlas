@@ -1,0 +1,363 @@
+@import url("https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+    --bg: #ffffff;
+    --fg: #111111;
+    --muted: rgba(17, 17, 17, 0.7);
+    --country: #2a2a2a;
+
+    --cardBg: rgba(255, 255, 255, 0);
+    --cardBorder: rgba(0, 0, 0, 0.08);
+
+    --countryLayerOpacity: 1;
+
+    --panel-pad: 6vh 2vw;
+    --tile-radius: 6px;
+    --shadow: 0 10px 50px rgba(0, 0, 0, 0.14);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: "Archivo", sans-serif;
+    overflow-y: hidden;
+}
+
+.spacing-section {
+    height: 80vh;
+    padding: 5rem;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    background-color:#EADFCB;
+
+    background-image:
+
+    /* major longitude */
+    linear-gradient(90deg,
+        rgba(0,0,0,.05) 2px,
+        transparent 2px),
+
+    /* major latitude */
+    linear-gradient(
+        rgba(0,0,0,.05) 2px,
+        transparent 2px),
+
+    /* minor longitude */
+    linear-gradient(90deg,
+        rgba(0,0,0,.02) 1px,
+        transparent 1px),
+
+    /* minor latitude */
+    linear-gradient(
+        rgba(0,0,0,.02) 1px,
+        transparent 1px),
+
+    /* compass rings */
+    radial-gradient(circle at center,
+        transparent 180px,
+        rgba(0,0,0,.035) 181px,
+        transparent 182px),
+
+    radial-gradient(circle at center,
+        transparent 360px,
+        rgba(0,0,0,.025) 361px,
+        transparent 362px);
+
+    background-size:
+        320px 320px,
+        320px 320px,
+        40px 40px,
+        40px 40px,
+        100% 100%,
+        100% 100%;
+}
+
+.spacing-section h1 { 
+    margin: 0; 
+    background: var(--bg); 
+    color: var(--country); 
+    font-size: 4rem; 
+    text-transform: uppercase; 
+    letter-spacing: 0.5rem; 
+}
+
+.hero-title{
+    margin-inline:20%;
+    text-align:center;
+}
+
+.title-rotator{
+    font-size:4rem;
+    font-weight:700;
+    text-transform:uppercase;
+    letter-spacing:.5rem;
+    color:#111111;
+}
+
+.hero-title p {
+    margin-top: 2rem;
+    color:#111111;
+    font-size: 1.5rem;
+    letter-spacing: 0.2rem;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.timeline {
+    position: relative;
+}
+
+.panels {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.panel {
+    height: 100vh;
+    padding: var(--panel-pad);
+    margin-bottom: 50vh;
+    position: relative;
+}
+
+.panel_stage {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.tile {
+    position: absolute;
+    width: var(--w, 30vw);
+    z-index: var(--z, 1);
+}
+
+.tile_box {
+    position: relative;
+    width: 100%;
+    aspect-ratio: var(--ratio, 16 / 9);
+    overflow: hidden;
+    border-radius: var(--tile-radius);
+    background: rgba (127, 127, 127, 0.12);
+    box-shadow: var(--shadow);
+}
+
+.tile_box.text-only_box {
+    aspect-ratio: unset;
+}
+
+.tile_media {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+.tile_text {
+    padding: clamp(14px, 2vw, 22px);
+    display: grid;
+    gap: 10px;
+    align-content: start;
+    opacity: 0;
+    transform: translateY(24px);
+    will-change: transform, opacity;
+
+    background: var(--cardBg);
+    border: 1px solid var(--cardBorder);
+    backdrop-filter: blur(10px);
+}
+
+/* Title of the text only tile */
+.tile_text h3 {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+
+    margin: 0;
+    font-size: 3rem;
+    line-height: 1.1;
+}
+
+.flag {
+    width: 40px;
+    height: 28px;
+    object-fit: cover;
+    border-radius: 4px;
+    flex-shrink: 0;
+
+    box-shadow: 0 2px 6px rgba(0,0,0,.15);
+}
+
+/* Description of the text only tile */
+.tile_text p {
+    margin: 0;
+    font-size: clamp(13px, 1.4vw, 16px);
+    line-height: 1.4;
+    color: var(--muted);
+    max-width: 46ch;
+}
+
+/* Positioning of the tiles */
+
+.pos-top-left {
+    top: 0;
+    left: 5%;
+}
+
+.pos-top-left-10 {
+    top: 10%;
+    left: 10%;
+}
+
+.pos-top-left-15 {
+    top: 15%;
+    left: 15%;
+}
+
+.pos-top-right {
+    top: 10%;
+    right: 5%;
+}
+
+.pos-top-right-10 {
+    top: 10%;
+    right: 10%;
+}
+
+.pos-top-right-15 {
+    top: 15%;
+    right: 15%;
+}
+
+.pos-bottom-left{
+    bottom: 0;
+    left: 5%;
+}
+
+.pos-bottom-left-0 {
+    bottom: 0;
+    left: 0;
+}
+
+.pos-bottom-left-10 {
+    bottom: 10%;
+    left: 10%;
+}
+
+.pos-bottom-left-1015 {
+    bottom: 15%;
+    left: 10%;
+}
+
+
+.pos-bottom-left-10-916 {
+    bottom: 0%;
+    left: 10%;
+}
+
+.pos-bottom-left-vid{
+    bottom: 15%;
+    left: 10%;
+}
+
+.pos-bottom-right-vid{
+    bottom: 15%;
+    right: 10%;
+}
+
+.pos-bottom-right {
+    bottom: 0;
+    right: 10%;
+}
+
+.pos-bottom-right-10 {
+    bottom: 10%;
+    right: 10%;
+}
+
+.pos-top-quarter-left {
+    top: 25%;
+    left: 0;
+}
+
+.pos-bottom-center-lg {
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.pos-center-center {
+    top: 57%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+
+.country-layer {
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    opacity: var(--countryLayerOpacity);
+    pointer-events: none;
+}
+
+.country-wrapper {
+    position: sticky;
+    top: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.country {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    transform: translateY(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    clip-path: inset(2% 0 2% 0);
+    color: var(--country);
+    line-height: 0.86;
+}
+
+.char {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    flex: 0 0 0.75em;   /* fixed column width */
+    width: 0.75em;
+
+    font-size: 25rem;
+    font-weight: 400;
+    line-height: 1;
+
+    will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tile_media,
+    .tile_text,
+    .char {
+        opacity: 1 !important;
+        transition: none !important;
+    }
+}
