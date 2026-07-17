@@ -89,7 +89,7 @@ body {
 .spacing-section h1 { 
     margin: 0;  
     color: #111111; 
-    font-size: 4rem; 
+      font-size: 4rem; 
     text-transform: uppercase; 
     letter-spacing: 0.5rem; 
 }
@@ -223,6 +223,11 @@ body {
     left: 10%;
 }
 
+.pos-top-left-916l { /* Custom position for top left 916 tile in Laptop for the meantime */
+    top: 10%;
+    left: 10%;
+}
+
 .pos-top-left-15 {
     top: 15%;
     left: 15%;
@@ -262,7 +267,6 @@ body {
     bottom: 15%;
     left: 10%;
 }
-
 
 .pos-bottom-left-10-916 {
     bottom: 0%;
@@ -359,4 +363,70 @@ body {
         opacity: 1 !important;
         transition: none !important;
     }
+}
+
+/* ===== Desktop & Laptop Optimization ===== */
+
+/* Prevent layout collapsing on unsupported narrow screens */
+html, body{
+    min-width:1200px;
+}
+
+/* Fluid typography */
+.title-rotator{
+    font-size:clamp(3rem,4vw,4rem);
+}
+
+.hero-title p{
+    font-size:clamp(1.1rem,1.6vw,1.5rem);
+}
+
+.tile_text h3{
+    font-size:clamp(2rem,2.6vw,3rem);
+}
+
+.char{
+    font-size:clamp(16rem,22vw,25rem);
+}
+
+/* Laptop adjustments */
+@media (max-width:1536px){
+    :root{
+        --panel-pad:4vh 2vw;
+    }
+
+    .hero-title{
+        width:min(1000px,90%);
+        margin-inline:auto;
+    }
+
+    .spacing-section{
+        padding:3rem;
+    }
+
+    .flag{
+        width:34px;
+        height:24px;
+    }
+
+    .pos-bottom-right-vid{
+        bottom: 0;
+        right: 10%; 
+    }
+
+    .portrait-tile{
+        width: 208px !important;
+    }
+
+    .pos-top-left-916l{
+        top: 3%;
+        left: 10%;
+    }
+
+    .pos-bottom-right-10 {
+        bottom: 5%;
+        right: 10%;
+    }
+
+
 }
