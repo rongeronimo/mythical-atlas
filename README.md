@@ -19,3 +19,9 @@
 > **Desktop & Laptop Support Only**
 >
 > This project is currently optimized for **desktop and laptop** devices. Mobile and tablet responsiveness is planned and will be introduced in future updates.
+
+![Mythical Atlas SS1](assets/img/mas1.png)
+
+![Mythical Atlas SS2](assets/img/mas2.png)
+
+![Mythical Atlas SS3](assets/img/mas3.png)
