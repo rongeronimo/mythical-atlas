@@ -289,7 +289,7 @@ function initTimeline() {
                 },
                 {
                     type: "image",
-                    pos: "pos-top-left-10",
+                    pos: "pos-top-left-916l",
                     w: "250px",
                     ratio: "9 / 16",
                     src: "assets/img/Krampus2.png",
@@ -436,7 +436,7 @@ function initTimeline() {
                 },
                 {
                     type: "image",
-                    pos: "pos-top-left-10",
+                    pos: "pos-top-left-916l",
                     w: "250px",
                     ratio: "9 / 16",
                     src: "assets/img/chupacabra2.jpg",
@@ -514,6 +514,10 @@ function initTimeline() {
 
     const buildTile = (tileData) => {
         const tileEl = el("div", `tile ${tileData.pos || ""}`.trim());
+
+        if (tileData.ratio === "9 / 16") {
+            tileEl.classList.add("portrait-tile");
+        }
 
         tileEl.style.setProperty("--w", tileData.w || "30vw");
         tileEl.style.setProperty("--ratio", tileData.ratio || "16 / 9");
