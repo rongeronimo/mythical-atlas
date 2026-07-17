@@ -73,3 +73,42 @@
 
     will-change: transform, opacity;
 }
+
+/* =====================================
+   Laptop Optimization
+===================================== */
+
+@media (max-width: 1600px){
+
+    .description-rotator{
+        width: min(850px, 90%);
+    }
+
+}
+
+@media (max-width: 1440px){
+
+    .title-rotator{
+        min-height: 3rem;
+    }
+
+    .description-rotator{
+        width: min(760px, 90%);
+        font-size: 1rem;
+        min-height: 3.5rem;
+    }
+
+}
+
+@media (max-width: 1280px){
+
+    .title-rotator{
+        min-height: 2.8rem;
+    }
+
+    .description-rotator{
+        width: min(680px, 90%);
+        line-height: 1.5;
+    }
+
+}
